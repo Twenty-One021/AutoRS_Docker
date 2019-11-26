@@ -1,0 +1,20 @@
+#!/bin/bash
+cd /home/zhihui
+mkdir var
+cd var
+mkdir log
+cd log
+mkdir AutoRS
+mkdir webserver
+cd /home/zhihui
+mkdir AutoRS_webserver
+cd AutoRS_webserver
+mkdir upload
+mkdir uploadZip
+cd /home/zhihui/AutoRS
+mkdir Data
+cd Data
+mkdir logs
+mkdir Maps
+mkdir RMaps
+mkdir config

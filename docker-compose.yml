@@ -1,0 +1,28 @@
+version: '2.3'
+
+services:
+    autors_csg:
+        image: registry.cn-shenzhen.aliyuncs.com/autors/csg:v1
+        environment:
+          - DISPLAY=unix$DISPLAY
+        volumes:
+            - /home/zhihui/AutoRS/Data/Maps:/home/zhihui/AutoRS/Data/Maps
+            - /home/zhihui/AutoRS/Data/RMaps:/home/zhihui/AutoRS/Data/RMaps
+            - /home/zhihui/AutoRS/Data/logs:/home/zhihui/AutoRS/Data/logs
+            - /home/zhihui/AutoRS/Data/config:/home/zhihui/AutoRS/Data/config
+            - /home/zhihui/var:/home/zhihui/var
+            - /home/zhihui/AutoRS_webserver/upload:/home/zhihui/AutoRS_webserver/upload
+            - /home/zhihui/AutoRS_webserver/uploadZip:/home/zhihui/AutoRS_webserver/uploadZip
+            - /dev/bus/usb:/dev/bus/usb
+            - /tmp/.X11-unix:/tmp/.X11-unix
+        network_mode: "host"
+        #privileged: true
+        devices:
+            - "/dev/bus/usb/001:/dev/bus/usb/001"
+        ports:
+          - "8000:8000"
+          - "9000:9000"
+          - "2368:2368"
+          - "2369:2369"
+          - "25556:25556"
+        command: bash /home/zhihui/AutoRS/startup

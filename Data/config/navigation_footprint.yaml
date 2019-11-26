@@ -1,0 +1,54 @@
+###################################################
+#
+#                        CSG Parameters     
+#
+#  Notation: whether you use Ackerman or Differential chassis,
+#            first you need to get the rotation center which mean rear wheel-base center for Ackerman chassis and mean body center for Differential chassis
+#            second you need to get the model configuration according the following model definition
+#    Footprint Model
+#      1) line model:
+#           "line start" and "line end" is refer to the rear wheel-base center which is "rotation_center_pose" now
+#           "+" mean distance forward to the rear wheel-base center
+#      2) two_circles model:
+#           "front offset" and "rear offset" is refer to the rear wheel-base center which is "rotation_center_pose" now
+#           for front, "+" mean distance forward to the rear wheel-base center
+#           for rear, "+" mean distance backward to the rear wheel-base center
+#      3) point model:
+#           origin refer to body center which is "rotation_center_pose" now
+#      4) circle model:
+#           origin refer to body center which is "rotation_center_pose" now
+#      5) polygon model:
+#           origin refer to body center which is "rotation_center_pose" now
+#  Be Careful!: for Differential chassis, rotation center is equal to the body center
+###################################################
+footprint_type: line
+footprint: [[-0.30, -0.40], [-0.30, 0.40], [0.60, 0.40], [0.60, -0.40]] # can delicate, refer to the rotation center, for Ackerman chassis
+#footprint: [[-0.65, -0.45], [-0.65, 0.45], [0.65, 0.45], [0.65, -0.45]] # can delicate, refer to the rotation center, for Differential chassis
+inscribed_radius: 0.20
+circumscribed_radius: 0.40
+inflated_radius: 0.10 # use for collision detection and w   e will use the more precious collision detection method in the future
+#length_sensor2body_center: 0.30 # SL Differ
+#length_sensor2rotation_center: 0.30 # SL Differ
+length_sensor2body_center: 0.0 # Ackerman
+length_sensor2rotation_center: 0.25 # Ackerman
+
+
+# for "line" Model
+line_model_start: [-0.10, 0.0] # Ackerman chassis
+line_model_end: [0.40, 0.0] # Ackerman chassis
+#line_model_start: [-0.20, 0.0] # Differential chassis
+#line_model_end: [0.20, 0.0] # Differential chassis
+
+# for "circle" Model (Differential chassis)
+circle_model_radius: 0.90
+
+# for "two_circles" Model (Ackerman chassis)
+two_circle_model_front_radius: 0.80
+two_circle_model_front_offset: 0.80 # "+" mean forward
+two_circle_model_rear_radius: 0.80
+two_circle_model_rear_offset: 0.20 # "+" mean backward
+
+# Be careful!
+# we deprecated the dynamic reconfigure of cmd_angle_instead_rotve param now!
+# and use this parameters to specify cmd_angle_instead_rotvel
+cmd_angle_instead_rotvel: false # true mean: v, theta. false mean: v, w
