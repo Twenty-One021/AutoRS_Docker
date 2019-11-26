@@ -22,6 +22,16 @@ sudo apt-get install docker-compose
 
 echo "Install AutoRS"
 
-sudo git clone https://github.com/a2008301610258/AutoRS_Docker.git
+git clone https://github.com/a2008301610258/AutoRS_Docker.git
 
-sudo git checkout -b base_v1 
+cd AutoRS_Docker
+
+git checkout -b base remotes/origin/base
+
+mkdir /home/zhihui/AutoRS
+
+cp AutoRS_Docker/* /home/zhihui/AutoRS/*
+
+cd /home/zhihui/AutoRS
+
+bash init.sh
