@@ -24,4 +24,4 @@ echo "Install AutoRS"
 
 sudo git clone https://github.com/a2008301610258/AutoRS_Docker.git
 
-sudo git checkout -b base_v1 
+sudo git checkout -b csg_v1 
