@@ -26,7 +26,7 @@ current_hei: -24
 #################
 # for localization_global.launch
 #################
-lidar_topic: /velodyne_points #/velodyne_points # "/velodyne_points" "/rslidar_points" "/lslidar_point_cloud"
+lidar_topic: /lslidar_point_cloud #/velodyne_points # "/velodyne_points" "/rslidar_points" "/lslidar_point_cloud"
 initial_enu_lat: 23.1675762776
 initial_enu_lon: 113.460986021
 initial_enu_hei: 0.0
@@ -42,7 +42,7 @@ imu_valid: false
 #################
 # for perception.launch
 #################
-laser_range: 4.0
+laser_range: 6.0
 laser_min_hei: 0.1
 laser_max_hei: 0.4
 robot_radius: 0.50 # if legnth to sensor is smaller than robot_radius, then omit
@@ -75,9 +75,9 @@ arrival_yaw_limit: 30
 ################
 # for calibration
 ################
-device_B_L_rot_x: -180.0
-device_B_L_rot_y: 0.0
-device_B_L_rot_z: 45.0
+device_B_L_rot_x: 0.0 #-180.0
+device_B_L_rot_y: 0.0 #0.0
+device_B_L_rot_z: 0.0 #45.0
 device_B_L_offset_x: 0.0
 device_B_L_offset_y: 0.0
 device_B_L_offset_z: 0.0
