@@ -2,7 +2,7 @@ version: '2.3'
 
 services:
     autors_csg:
-        image: registry.cn-shenzhen.aliyuncs.com/autors/csg:v1
+        image: registry.cn-shenzhen.aliyuncs.com/autors/base:v1
         environment:
           - DISPLAY=unix$DISPLAY
         volumes:
