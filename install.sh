@@ -1,4 +1,7 @@
 #!/bin/bash
+
+#chmod 777 /dev/ttyUSB0
+
 echo "Install Docker"
 
 echo '123456' | sudo -S apt-get install -y \
@@ -8,16 +11,18 @@ echo '123456' | sudo -S apt-get install -y \
     curl \
     software-properties-common
 
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+curl -fsSL http://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | sudo apt-key add -
 
-sudo apt-key fingerprint 0EBFCD88
-
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable"
+sudo add-apt-repository "deb [arch=amd64] http://mirrors.aliyun.com/docker-ce/linux/ubuntu xenial stable"
 
 sudo apt-get update
 
 echo '123456' | sudo -S apt-get install -y \
      docker-ce
+
+sudo curl -L https://get.daocloud.io/docker/compose/releases/download/1.22.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+
+sudo chmod +x /usr/local/bin/docker-compose
 
 #sudo apt-get install docker-compose
 
@@ -47,10 +52,6 @@ echo '123456' | sudo -S apt-get install -y \
 echo 'a2008301610258' | sudo docker login --username=wchxiong registry.cn-shenzhen.aliyuncs.com
 
 sudo docker pull registry.cn-shenzhen.aliyuncs.com/autors/csg:v1
-
-sudo curl -L https://github.com/docker/compose/releases/download/1.22.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
-
-sudo chmod +x /usr/local/bin/docker-compose
 
 sudo chmod 777 /etc/rc.local
 
