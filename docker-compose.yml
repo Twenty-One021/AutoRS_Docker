@@ -10,6 +10,7 @@ services:
             - /home/zhihui/AutoRS/Data/RMaps:/home/zhihui/AutoRS/Data/RMaps
             - /home/zhihui/AutoRS/Data/logs:/home/zhihui/AutoRS/Data/logs
             - /home/zhihui/AutoRS/Data/config:/home/zhihui/AutoRS/Data/config
+            - /home/zhihui/var/log/AutoRS:/home/zhihui/var/log/AutoRS
             - /home/zhihui/var:/home/zhihui/var
             - /home/zhihui/AutoRS_webserver/upload:/home/zhihui/AutoRS_webserver/upload
             - /home/zhihui/AutoRS_webserver/uploadZip:/home/zhihui/AutoRS_webserver/uploadZip
@@ -19,6 +20,8 @@ services:
         #privileged: true
         devices:
             - "/dev/bus/usb/001:/dev/bus/usb/001"
+            - "/dev/usb:/dev/usb"
+            - "/dev/ttyUSB0:/dev/ttyUSB0"
         ports:
           - "8000:8000"
           - "9000:9000"
