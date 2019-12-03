@@ -49,7 +49,8 @@ echo "Install AutoRS Docker"
 echo '123456' | sudo -S apt-get install -y \
       git
 
-echo 'a2008301610258' | sudo docker login --username=wchxiong registry.cn-shenzhen.aliyuncs.com
+# echo 'a2008301610258' | sudo docker login --username=wchxiong registry.cn-shenzhen.aliyuncs.com
+sudo docker login --username=wchxiong -p 'a2008301610258' registry.cn-shenzhen.aliyuncs.com
 
 sudo docker pull registry.cn-shenzhen.aliyuncs.com/autors/csg:v1
 
