@@ -6,10 +6,11 @@ services:
         environment:
           - DISPLAY=unix$DISPLAY
         volumes:
-            - /home/zhihui/AutoRS/Data/Maps:/home/zhihui/AutoRS/Data/Maps
-            - /home/zhihui/AutoRS/Data/RMaps:/home/zhihui/AutoRS/Data/RMaps
-            - /home/zhihui/AutoRS/Data/logs:/home/zhihui/AutoRS/Data/logs
-            - /home/zhihui/AutoRS/Data/config:/home/zhihui/AutoRS/Data/config
+            # - /home/zhihui/AutoRS/Data/Maps:/home/zhihui/AutoRS/Data/Maps
+            # - /home/zhihui/AutoRS/Data/RMaps:/home/zhihui/AutoRS/Data/RMaps
+            # - /home/zhihui/AutoRS/Data/logs:/home/zhihui/AutoRS/Data/logs
+            # - /home/zhihui/AutoRS/Data/config:/home/zhihui/AutoRS/Data/config
+            - /home/zhihui/AutoRS/Data/:/home/zhihui/AutoRS/Data/
             - /home/zhihui/var/log/AutoRS:/home/zhihui/var/log/AutoRS
             - /home/zhihui/var:/home/zhihui/var
             - /home/zhihui/AutoRS_webserver/upload:/home/zhihui/AutoRS_webserver/upload
